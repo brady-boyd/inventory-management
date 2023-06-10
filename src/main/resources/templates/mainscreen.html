@@ -42,6 +42,7 @@
        class="btn btn-primary btn-sm mb-3">Add Inhouse Part</a>
     <a th:href="@{/showFormAddOutPart}" style="background-color: #2a0c89;"
        class="btn btn-primary btn-sm mb-3">Add Outsourced Part</a>
+    <div class="table-responsive">
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
@@ -133,6 +134,7 @@
         </tr>
         </tbody>
     </table>
+    </div>
     <div th:if="${message}" class="alert alert-info alert-dismissible fade show" role="alert">
         <p th:text="${message}"></p>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -155,6 +157,7 @@
     <br><br>
     <a th:href="@{/showFormAddProduct}" style="background-color: #2a0c89;"
        class="btn btn-primary btn-sm mb-3">Add Product</a>
+    <div class="table-responsive">
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
@@ -251,9 +254,11 @@
         </tr>
         </tbody>
     </table>
+    </div>
 </div>
 </div>
 <div class="button-container">
+    <button class="btn-custom" onclick="window.location.href='/logout'">Logout</button>
     <button class="btn-custom" onclick="window.location.href='/logs'">Application Logs</button>
 </div>
 </body>

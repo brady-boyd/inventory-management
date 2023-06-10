@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.lang.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -131,4 +133,16 @@ public class MainScreenControllerr {
     public String about(){
         return "about";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) throws ServletException {
+        request.logout();
+        return "redirect:/login";
+    }
+
 }

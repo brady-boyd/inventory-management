@@ -17,18 +17,18 @@
     <p><input type="hidden" th:field="*{id}"/></p>
     <div class="form-group">
         <label for="name">Name:</label><br>
-        <input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/>
+        <input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4" pattern="^[a-zA-Z+]{1,100}$"/>
     </div>
 
     <div class="form-group">
     <label for="price">Price:</label><br>
-    <input type="number" step="0.01" path="price" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/>
+    <input type="number" step="0.01" path="price" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4" min="0" max="100000"/>
     <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</div>
     </div>
 
     <div class="form-group">
         <label for="inv">Inventory:</label><br>
-        <input type="number" th:classappend="${#fields.hasErrors('inv')}? 'is-invalid'" th:field="${inhousepart.inv}" class="form-control" id="inv" placeholder="Enter inventory">
+        <input type="number" th:classappend="${#fields.hasErrors('inv')}? 'is-invalid'" th:field="${inhousepart.inv}" class="form-control" id="inv" placeholder="Enter inventory" min="0" max="100000">
         <div th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}" class="invalid-feedback"></div>
         <div th:if="${inhousepart.inv &lt; inhousepart.minInv or inhousepart.inv &gt; inhousepart.maxInv}" class="invalid-feedback"><div th:if="${error}" th:text="${error}" class="invalid-feedback"></div>
         </div>
@@ -37,19 +37,19 @@
     <!-- Add min and max inventory input elements -->
     <div class="form-group">
     <label for="minInv">Minimum Inventory:</label><br>
-    <input type="number" path="minInv" th:field="*{minInv}" placeholder="Minimum Inventory" class="form-control mb-4 col-4"/>
+    <input type="number" path="minInv" th:field="*{minInv}" placeholder="Minimum Inventory" class="form-control mb-4 col-4" min="0" max="100000"/>
     <div th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">Min Inventory Error</div>
     </div>
 
     <div class="form-group">
         <label for="maxInv">Maximum Inventory:</label><br>
-        <input type="number" path="maxInv" th:field="*{maxInv}" placeholder="Maximum Inventory" class="form-control mb-4 col-4"/>
+        <input type="number" path="maxInv" th:field="*{maxInv}" placeholder="Maximum Inventory" class="form-control mb-4 col-4" min="0" max="100000"/>
         <div th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">Max Inventory Error</div>
     </div>
 
     <div class="form-group">
         <label for="partId">Part ID:</label><br>
-        <input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4"/>
+        <input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4" min="0" max="100000"/>
     </div>
 
 <p><input type="submit" value="Submit" /></p>
