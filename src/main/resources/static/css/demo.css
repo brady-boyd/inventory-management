@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -68,6 +68,6 @@ h1, h2 {
 }
 
 .table-responsive {
-    max-height: 300px; /* Adjust the height as needed */
+    max-height: 400px; /* Adjust the height as needed */
     overflow: auto;
 }

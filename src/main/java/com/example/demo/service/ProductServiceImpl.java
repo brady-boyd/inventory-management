@@ -62,7 +62,7 @@ public class ProductServiceImpl implements ProductService{
     }
     public List<Product> listAll(String keyword){
         if(keyword !=null){
-            return productRepository.search(keyword);
+            return productRepository.searchIgnoreCase(keyword);
         }
         return (List<Product>) productRepository.findAll();
     }

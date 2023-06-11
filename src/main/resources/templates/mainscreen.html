@@ -14,19 +14,12 @@
     <!-- Custom CSS -->
     <link href="/css/demo.css" rel="stylesheet" th:href="@{/css/demo.css}">
 
-    <title>PerfectPens Shop</title>
+    <title>PerfectPens Inventory Management System</title>
 </head>
 <body>
 <div class="main-content">
 
 <div class="container">
-    <h1>PerfectPens</h1>
-    <hr>
-    <div class="button-container">
-        <button class="btn-custom" onclick="window.location.href='/about'">About PerfectPens
-        </button>
-    </div>
-    <hr>
     <h2>Parts</h2>
     <form th:action="@{/mainscreen}" style="display: flex; align-items: center; justify-content: center;">
         Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
@@ -37,7 +30,7 @@
             <input type="button" value="Clear" id="btnClearPart" onclick="clearSearch()" />
         </div>
     </form>
-    <br><br>
+
     <a th:href="@{/showFormAddInPart}" style="background-color: #2a0c89;"
        class="btn btn-primary btn-sm mb-3">Add Inhouse Part</a>
     <a th:href="@{/showFormAddOutPart}" style="background-color: #2a0c89;"
@@ -154,7 +147,6 @@
             window.location = "[[@{/}]]";
         }
     </script>
-    <br><br>
     <a th:href="@{/showFormAddProduct}" style="background-color: #2a0c89;"
        class="btn btn-primary btn-sm mb-3">Add Product</a>
     <div class="table-responsive">
@@ -173,7 +165,7 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.inv}"></td>
             <td>
-                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Buy Now</a>
+                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Sell Now</a>
                 <a th:href="@{/showProductFormForUpdate(productID=${product.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${product.id})}" style="background-color: red; color: white;"
                    class="btn btn-primary btn-sm mb-3"
@@ -185,7 +177,7 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.inv}"></td>
             <td>
-                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Buy Now</a>
+                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Sell Now</a>
                 <a th:href="@{/showProductFormForUpdate(productID=${product.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${product.id})}" style="background-color: red; color: white;"
                    class="btn btn-primary btn-sm mb-3"
@@ -197,7 +189,7 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.inv}"></td>
             <td>
-                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Buy Now</a>
+                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Sell Now</a>
                 <a th:href="@{/showProductFormForUpdate(productID=${product.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${product.id})}" style="background-color: red; color: white;"
                    class="btn btn-primary btn-sm mb-3"
@@ -209,7 +201,7 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.inv}"></td>
             <td>
-                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Buy Now</a>
+                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Sell Now</a>
                 <a th:href="@{/showProductFormForUpdate(productID=${product.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${product.id})}" style="background-color: red; color: white;"
                    class="btn btn-primary btn-sm mb-3"
@@ -221,7 +213,7 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.inv}"></td>
             <td>
-                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Buy Now</a>
+                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Sell Now</a>
                 <a th:href="@{/showProductFormForUpdate(productID=${product.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${product.id})}" style="background-color: red; color: white;"
                    class="btn btn-primary btn-sm mb-3"
@@ -233,7 +225,7 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.inv}"></td>
             <td>
-                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Buy Now</a>
+                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Sell Now</a>
                 <a th:href="@{/showProductFormForUpdate(productID=${product.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${product.id})}" style="background-color: red; color: white;"
                    class="btn btn-primary btn-sm mb-3"
@@ -245,7 +237,7 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.inv}"></td>
             <td>
-                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Buy Now</a>
+                <a th:href="@{/buyProduct(productID=${product.id})}" class="btn btn-success btn-sm mb-3">Sell Now</a>
                 <a th:href="@{/showProductFormForUpdate(productID=${product.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${product.id})}" style="background-color: red; color: white;"
                    class="btn btn-primary btn-sm mb-3"
@@ -258,8 +250,9 @@
 </div>
 </div>
 <div class="button-container">
-    <button class="btn-custom" onclick="window.location.href='/logout'">Logout</button>
-    <button class="btn-custom" onclick="window.location.href='/logs'">Application Logs</button>
+    <button class="btn-custom" onclick="window.location.href='/about'">About PerfectPens</button>
+    <button class="btn-custom" style="background-color: red; color: white;" onclick="window.location.href='/logout'">Logout</button>
+    <button class="btn-custom" onclick="window.location.href='/logs'">Application Log</button>
 </div>
 </body>
 </html>

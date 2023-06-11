@@ -32,7 +32,7 @@ public class PartServiceImpl implements PartService{
     }
     public List<Part> listAll(String keyword){
         if(keyword !=null){
-            return partRepository.search(keyword);
+            return partRepository.searchIgnoreCase(keyword);
         }
         return (List<Part>) partRepository.findAll();
     }

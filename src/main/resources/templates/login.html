@@ -2,18 +2,68 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Login</title>
+  <style>
+    body {
+      background-color: #b9b9b9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    form {
+      background-color: #ffffff;
+      color: #000000;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    form label {
+      color: #5a5a5a;
+    }
+
+    form input[type="text"],
+    form input[type="password"] {
+      border: none;
+      border-bottom: 1px solid #5a5a5a;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+
+    form input[type="submit"] {
+      border: 2px solid #ffffff;
+      border-color: #ffffff;
+      background-color: #5a5a5a;
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-<div th:if="${param.error}">
-  Invalid username or password.
+<div class="container">
+  <h2>PerfectPens</h2>
+  <form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/></label></div>
+    <div><label> Password: <input type="password" name="password"/></label></div>
+    <div><input type="submit" value="Sign In"/></div>
+    <div th:if="${param.error}" class="error-message">
+      Invalid username or password.
+    </div>
+  </form>
 </div>
-<div th:if="${param.logout}">
-  You have been logged out.
-</div>
-<form th:action="@{/login}" method="post">
-  <div><label> User Name : <input type="text" name="username"/> </label></div>
-  <div><label> Password: <input type="password" name="password"/> </label></div>
-  <div><input type="submit" value="Sign In"/></div>
-</form>
 </body>
 </html>
